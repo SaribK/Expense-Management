@@ -156,6 +156,7 @@ namespace Expense_Management
             this.button2.TabIndex = 4;
             this.button2.Text = "CLEAR";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label5
             // 
@@ -176,6 +177,7 @@ namespace Expense_Management
             this.label6.Size = new System.Drawing.Size(97, 17);
             this.label6.TabIndex = 5;
             this.label6.Text = "Back to LOGIN";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // frmRegistaer
             // 

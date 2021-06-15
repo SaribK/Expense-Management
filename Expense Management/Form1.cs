@@ -30,11 +30,16 @@ namespace Expense_Management
             }
             else if (txtPassword.Text == txtComPassword.Text)
             {
+                // make sure this username does not already exist before adding it
                 con.Open();
                 string register = "INSERT INTO tbl_users VALUES ('"+ txtUsername.Text +"','"+ txtPassword.Text +"')";
                 cmd = new SqlCommand(register, con);
                 cmd.ExecuteNonQuery();
                 con.Close();
+
+                txtUsername.Text = "";
+                txtPassword.Text = "";
+                txtComPassword.Text = "";
 
                 MessageBox.Show("Your account has been successfully created", "Registration Success", MessageBoxButtons.OK);
             }
@@ -59,6 +64,20 @@ namespace Expense_Management
                 txtPassword.PasswordChar = '•';
                 txtComPassword.PasswordChar = '•';
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            txtUsername.Text = "";
+            txtPassword.Text = "";
+            txtComPassword.Text = "";
+            txtUsername.Focus();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            new frmLogin().Show();
+            this.Hide();
         }
     }
 }
