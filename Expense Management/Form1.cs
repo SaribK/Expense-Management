@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Expense_Management
 {
-    public partial class Form1 : Form
+    public partial class frmRegistaer : Form
     {
-        public Form1()
+        public frmRegistaer()
         {
             InitializeComponent();
         }
