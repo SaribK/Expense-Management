@@ -91,6 +91,7 @@ namespace Expense_Management
             this.txtPassword.Location = new System.Drawing.Point(33, 206);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '•';
             this.txtPassword.Size = new System.Drawing.Size(216, 28);
             this.txtPassword.TabIndex = 2;
             // 
@@ -111,6 +112,7 @@ namespace Expense_Management
             this.txtComPassword.Location = new System.Drawing.Point(33, 285);
             this.txtComPassword.Multiline = true;
             this.txtComPassword.Name = "txtComPassword";
+            this.txtComPassword.PasswordChar = '•';
             this.txtComPassword.Size = new System.Drawing.Size(216, 28);
             this.txtComPassword.TabIndex = 2;
             // 
@@ -125,6 +127,7 @@ namespace Expense_Management
             this.checkbcShowPas.TabIndex = 3;
             this.checkbcShowPas.Text = "Show Password";
             this.checkbcShowPas.UseVisualStyleBackColor = true;
+            this.checkbcShowPas.CheckedChanged += new System.EventHandler(this.checkbcShowPas_CheckedChanged);
             // 
             // button1
             // 
@@ -139,6 +142,7 @@ namespace Expense_Management
             this.button1.TabIndex = 4;
             this.button1.Text = "REGISTER";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -194,7 +198,7 @@ namespace Expense_Management
             this.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmRegistaer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

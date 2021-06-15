@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,52 @@ namespace Expense_Management
 {
     public partial class frmRegistaer : Form
     {
-        public frmRegistaer()
+         public frmRegistaer()
         {
             InitializeComponent();
+        }
+
+        SqlConnection con = new SqlConnection("Data Source=DESKTOP-OFIG42E\\SQLEXPRESS;Initial Catalog=ExpensesDB;Persist Security Info=True;User ID=sarib;Password=sarib2001");
+        SqlCommand cmd = new SqlCommand();
+        SqlDataAdapter da = new SqlDataAdapter();
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (txtUsername.Text == "" && txtPassword.Text == "" && txtComPassword.Text == "")
+            {
+                MessageBox.Show("Username and Password fields are empty", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (txtPassword.Text == txtComPassword.Text)
+            {
+                con.Open();
+                string register = "INSERT INTO tbl_users VALUES ('"+ txtUsername.Text +"','"+ txtPassword.Text +"')";
+                cmd = new SqlCommand(register, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+                MessageBox.Show("Your account has been successfully created", "Registration Success", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show("Passwords do not match, please re-enter", "Registration failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtPassword.Text = "";
+                txtComPassword.Text = "";
+                txtPassword.Focus();
+            }
+        }
+
+        private void checkbcShowPas_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkbcShowPas.Checked)
+            {
+                txtPassword.PasswordChar = '\0';
+                txtComPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                txtPassword.PasswordChar = '•';
+                txtComPassword.PasswordChar = '•';
+            }
         }
     }
 }
