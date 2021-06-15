@@ -51,6 +51,7 @@ namespace Expense_Management
             this.label6.Size = new System.Drawing.Size(101, 17);
             this.label6.TabIndex = 16;
             this.label6.Text = "Create Account";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -70,9 +71,10 @@ namespace Expense_Management
             this.button2.Location = new System.Drawing.Point(38, 311);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(216, 35);
-            this.button2.TabIndex = 14;
+            this.button2.TabIndex = 15;
             this.button2.Text = "CLEAR";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -84,9 +86,10 @@ namespace Expense_Management
             this.button1.Location = new System.Drawing.Point(38, 270);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(216, 35);
-            this.button1.TabIndex = 15;
+            this.button1.TabIndex = 14;
             this.button1.Text = "LOGIN";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // checkbcShowPas
             // 
@@ -99,6 +102,7 @@ namespace Expense_Management
             this.checkbcShowPas.TabIndex = 13;
             this.checkbcShowPas.Text = "Show Password";
             this.checkbcShowPas.UseVisualStyleBackColor = true;
+            this.checkbcShowPas.CheckedChanged += new System.EventHandler(this.checkbcShowPas_CheckedChanged);
             // 
             // txtPassword
             // 
@@ -108,8 +112,10 @@ namespace Expense_Management
             this.txtPassword.Location = new System.Drawing.Point(38, 201);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '•';
             this.txtPassword.Size = new System.Drawing.Size(216, 28);
-            this.txtPassword.TabIndex = 11;
+            this.txtPassword.TabIndex = 12;
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // label3
             // 
@@ -129,7 +135,8 @@ namespace Expense_Management
             this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(216, 28);
-            this.txtUsername.TabIndex = 12;
+            this.txtUsername.TabIndex = 11;
+            this.txtUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsername_KeyDown);
             // 
             // label2
             // 
@@ -170,7 +177,7 @@ namespace Expense_Management
             this.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";

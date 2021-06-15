@@ -16,7 +16,7 @@ namespace Expense_Management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmRegistaer());
+            Application.Run(new frmLogin());
         }
     }
 }

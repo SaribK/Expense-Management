@@ -1,7 +1,7 @@
 ﻿
 namespace Expense_Management
 {
-    partial class frmRegistaer
+    partial class frmRegister
     {
         /// <summary>
         /// Required designer variable.
@@ -72,7 +72,8 @@ namespace Expense_Management
             this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(216, 28);
-            this.txtUsername.TabIndex = 2;
+            this.txtUsername.TabIndex = 0;
+            this.txtUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsername_KeyDown);
             // 
             // label3
             // 
@@ -93,7 +94,8 @@ namespace Expense_Management
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '•';
             this.txtPassword.Size = new System.Drawing.Size(216, 28);
-            this.txtPassword.TabIndex = 2;
+            this.txtPassword.TabIndex = 1;
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // label4
             // 
@@ -115,6 +117,7 @@ namespace Expense_Management
             this.txtComPassword.PasswordChar = '•';
             this.txtComPassword.Size = new System.Drawing.Size(216, 28);
             this.txtComPassword.TabIndex = 2;
+            this.txtComPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtComPassword_KeyDown);
             // 
             // checkbcShowPas
             // 
@@ -153,7 +156,7 @@ namespace Expense_Management
             this.button2.Location = new System.Drawing.Point(33, 387);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(216, 35);
-            this.button2.TabIndex = 4;
+            this.button2.TabIndex = 5;
             this.button2.Text = "CLEAR";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -179,7 +182,7 @@ namespace Expense_Management
             this.label6.Text = "Back to LOGIN";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // frmRegistaer
+            // frmRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -201,7 +204,7 @@ namespace Expense_Management
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frmRegistaer";
+            this.Name = "frmRegister";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);

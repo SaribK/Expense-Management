@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Expense_Management
 {
-    public partial class frmRegistaer : Form
+    public partial class frmRegister : Form
     {
-         public frmRegistaer()
+         public frmRegister()
         {
             InitializeComponent();
         }
@@ -78,6 +78,30 @@ namespace Expense_Management
         {
             new frmLogin().Show();
             this.Hide();
+        }
+
+        private void txtUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1_Click(this, new EventArgs());
+            }
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1_Click(this, new EventArgs());
+            }
+        }
+
+        private void txtComPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1_Click(this, new EventArgs());
+            }
         }
     }
 }
