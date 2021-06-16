@@ -21,5 +21,17 @@ namespace Expense_Management
         {
             Application.Exit();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new frmInsert().Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new frmSearch().Show();
+            this.Hide();
+        }
     }
 }
