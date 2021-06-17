@@ -53,7 +53,7 @@ namespace Expense_Management
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(886, 88);
+            this.panel1.Size = new System.Drawing.Size(904, 88);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -63,7 +63,7 @@ namespace Expense_Management
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(886, 88);
+            this.label1.Size = new System.Drawing.Size(904, 88);
             this.label1.TabIndex = 0;
             this.label1.Text = "Manage Entries";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -73,7 +73,7 @@ namespace Expense_Management
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(47, 142);
+            this.label2.Location = new System.Drawing.Point(48, 122);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 23);
             this.label2.TabIndex = 1;
@@ -82,7 +82,7 @@ namespace Expense_Management
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(212, 138);
+            this.txtName.Location = new System.Drawing.Point(213, 118);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(249, 27);
             this.txtName.TabIndex = 2;
@@ -92,7 +92,7 @@ namespace Expense_Management
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(47, 204);
+            this.label3.Location = new System.Drawing.Point(48, 184);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(159, 23);
             this.label3.TabIndex = 3;
@@ -103,7 +103,7 @@ namespace Expense_Management
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(493, 205);
+            this.label4.Location = new System.Drawing.Point(494, 185);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 23);
             this.label4.TabIndex = 7;
@@ -112,7 +112,7 @@ namespace Expense_Management
             // txtAmount
             // 
             this.txtAmount.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAmount.Location = new System.Drawing.Point(602, 144);
+            this.txtAmount.Location = new System.Drawing.Point(603, 124);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(249, 27);
             this.txtAmount.TabIndex = 6;
@@ -122,7 +122,7 @@ namespace Expense_Management
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(493, 143);
+            this.label5.Location = new System.Drawing.Point(494, 123);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(103, 23);
             this.label5.TabIndex = 5;
@@ -130,13 +130,14 @@ namespace Expense_Management
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Fixed Expense",
             "Irregular Expense",
             "Variable Costs"});
-            this.comboBox1.Location = new System.Drawing.Point(212, 205);
+            this.comboBox1.Location = new System.Drawing.Point(213, 185);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(249, 26);
             this.comboBox1.TabIndex = 9;
@@ -154,7 +155,7 @@ namespace Expense_Management
             this.button3.BackColor = System.Drawing.Color.Purple;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(531, 264);
+            this.button3.Location = new System.Drawing.Point(532, 244);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(113, 38);
             this.button3.TabIndex = 13;
@@ -166,7 +167,7 @@ namespace Expense_Management
             this.button2.BackColor = System.Drawing.Color.Purple;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(397, 264);
+            this.button2.Location = new System.Drawing.Point(398, 244);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(113, 38);
             this.button2.TabIndex = 12;
@@ -178,7 +179,7 @@ namespace Expense_Management
             this.button1.BackColor = System.Drawing.Color.Purple;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(262, 264);
+            this.button1.Location = new System.Drawing.Point(263, 244);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 38);
             this.button1.TabIndex = 11;
@@ -190,7 +191,7 @@ namespace Expense_Management
             // 
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(602, 205);
+            this.dateTimePicker1.Location = new System.Drawing.Point(603, 185);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(249, 27);
             this.dateTimePicker1.TabIndex = 14;
@@ -201,7 +202,7 @@ namespace Expense_Management
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(886, 546);
+            this.ClientSize = new System.Drawing.Size(904, 567);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -218,6 +219,7 @@ namespace Expense_Management
             this.Name = "frmInsert";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Entries";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmInsert_FormClosed);
             this.Load += new System.EventHandler(this.frmInsert_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

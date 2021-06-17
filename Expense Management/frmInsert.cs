@@ -45,7 +45,33 @@ namespace Expense_Management
         //insert into database
         private void button1_Click(object sender, EventArgs e)
         {
+            //check that no text boxes are left empty
+            if (txtName.TextLength == 0 || txtAmount.TextLength == 0 || comboBox1.Text.Length == 0)
+            {
+                MessageBox.Show("Fill out all parts of the form");
+            }
+            else
+            {
+                //check that int required text boxes are only given numbers
+                if (!int.TryParse(txtAmount.Text, out _))
+                {
+                    MessageBox.Show("Amount section must be a number");
+                }
+                else
+                {
+                    con.Open();
+                    SqlCommand command = new SqlCommand("insert into tbl_expenses values ('" + txtName.Text + "','" + int.Parse(txtAmount.Text) + "','" + comboBox1.Text + "','" + DateTime.Parse(dateTimePicker1.Text) + "','" + user + "')", con);
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Successfully Inserted.");
+                    con.Close();
+                    BindData();
+                }
+            }
+        }
 
+        private void frmInsert_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

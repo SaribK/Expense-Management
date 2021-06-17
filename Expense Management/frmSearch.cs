@@ -16,5 +16,10 @@ namespace Expense_Management
         {
             InitializeComponent();
         }
+
+        private void frmSearch_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
