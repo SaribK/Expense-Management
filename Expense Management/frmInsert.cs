@@ -85,13 +85,9 @@ namespace Expense_Management
             //TODO update each column depending on if it has input or not (i.e if name is filled, update name). Remove if statement that checks if everything is empty if doing this
             if (!int.TryParse(txtID.Text, out _))
             {
-                MessageBox.Show("ID has to be a number");
+                MessageBox.Show("Enter a number for ID");
                 txtID.Text = "";
                 txtID.Focus();
-            }
-            else if (txtName.TextLength == 0 || txtAmount.TextLength == 0 || comboBox1.Text.Length == 0 || txtID.Text.Length == 0)
-            {
-                MessageBox.Show("Fill out all parts of the form");
             }
             else
             {
@@ -103,10 +99,34 @@ namespace Expense_Management
                 int count = int.Parse(dt.Rows[0].ItemArray[0].ToString());
                 if (count > 0)
                 {
-                    con.Open();
-                    SqlCommand command = new SqlCommand("update tbl_expenses set " + "name = '" + txtName.Text + "', amount ='" + int.Parse(txtAmount.Text) + "', expenseType = '" + comboBox1.Text + "', date = '" + DateTime.Parse(dateTimePicker1.Text) + "' where id = '" + int.Parse(txtID.Text) + "' and username = '" + user + "'", con);
-                    command.ExecuteNonQuery();
-                    con.Close();
+                    if (txtName.Text.Length != 0)
+                    {
+                        con.Open();
+                        SqlCommand command = new SqlCommand("update tbl_expenses set " + "name = '" + txtName.Text + "' where id = '" + int.Parse(txtID.Text) + "' and username = '" + user + "'", con);
+                        command.ExecuteNonQuery();
+                        con.Close();
+                    }
+                    if (txtAmount.Text.Length != 0)
+                    {
+                        con.Open();
+                        SqlCommand command = new SqlCommand("update tbl_expenses set " + "amount = '" + int.Parse(txtAmount.Text) + "' where id = '" + int.Parse(txtID.Text) + "' and username = '" + user + "'", con);
+                        command.ExecuteNonQuery();
+                        con.Close();
+                    }
+                    if (comboBox1.Text.Length != 0)
+                    {
+                        con.Open();
+                        SqlCommand command = new SqlCommand("update tbl_expenses set " + "expenseType = '" + comboBox1.Text + "' where id = '" + int.Parse(txtID.Text) + "' and username = '" + user + "'", con);
+                        command.ExecuteNonQuery();
+                        con.Close();
+                    }
+                    if (dateTimePicker1.Text.Length != 0)
+                    {
+                        con.Open();
+                        SqlCommand command = new SqlCommand("update tbl_expenses set " + "date = '" + DateTime.Parse(dateTimePicker1.Text) + "' where id = '" + int.Parse(txtID.Text) + "' and username = '" + user + "'", con);
+                        command.ExecuteNonQuery();
+                        con.Close();
+                    }
                     MessageBox.Show("Successfully Updated.");
                     BindData();
                     txtName.Text = "";
