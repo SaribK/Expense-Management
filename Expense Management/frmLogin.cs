@@ -29,9 +29,14 @@ namespace Expense_Management
             cmd = new SqlCommand(login, con);
             SqlDataReader dr = cmd.ExecuteReader();
 
+
+            string current_user = txtUsername.Text;
+
+            
+
             if (dr.Read() == true)
             {
-                new dashboard().Show();
+                new dashboard(current_user).Show();
                 this.Hide();
             }
             else

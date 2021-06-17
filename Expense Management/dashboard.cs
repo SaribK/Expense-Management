@@ -12,9 +12,15 @@ namespace Expense_Management
 {
     public partial class dashboard : Form
     {
+        string user;
         public dashboard()
         {
             InitializeComponent();
+        }
+        public dashboard(string curr_user)
+        {
+            InitializeComponent();
+            user = curr_user;
         }
 
         private void dashboard_FormClosed(object sender, FormClosedEventArgs e)
@@ -24,7 +30,7 @@ namespace Expense_Management
 
         private void button1_Click(object sender, EventArgs e)
         {
-            new frmInsert().Show();
+            new frmInsert(user).Show();
             this.Hide();
         }
 

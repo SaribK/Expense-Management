@@ -58,7 +58,6 @@ namespace Expense_Management
             // 
             // label1
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Verdana", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
@@ -92,7 +91,7 @@ namespace Expense_Management
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(177, 68);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Insert";
+            this.button1.Text = "Manage Entries";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -107,7 +106,7 @@ namespace Expense_Management
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(177, 68);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Search";
+            this.button2.Text = "Search Database";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
