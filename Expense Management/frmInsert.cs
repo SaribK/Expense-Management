@@ -91,56 +91,63 @@ namespace Expense_Management
             }
             else
             {
-                SqlCommand command2 = new SqlCommand("SELECT count(name) from tbl_expenses where id = '" + int.Parse(txtID.Text) + "' and username = '" + user + "'", con);
-                SqlDataAdapter sd = new SqlDataAdapter(command2);
-                DataTable dt = new DataTable();
-                sd.SelectCommand.CommandType = CommandType.Text;
-                sd.Fill(dt);
-                int count = int.Parse(dt.Rows[0].ItemArray[0].ToString());
-                if (count > 0)
+                if (txtAmount.Text.Length != 0 && !int.TryParse(txtAmount.Text, out _))
                 {
-                    if (txtName.Text.Length != 0)
-                    {
-                        con.Open();
-                        SqlCommand command = new SqlCommand("update tbl_expenses set " + "name = '" + txtName.Text + "' where id = '" + int.Parse(txtID.Text) + "' and username = '" + user + "'", con);
-                        command.ExecuteNonQuery();
-                        con.Close();
-                    }
-                    if (txtAmount.Text.Length != 0)
-                    {
-                        con.Open();
-                        SqlCommand command = new SqlCommand("update tbl_expenses set " + "amount = '" + int.Parse(txtAmount.Text) + "' where id = '" + int.Parse(txtID.Text) + "' and username = '" + user + "'", con);
-                        command.ExecuteNonQuery();
-                        con.Close();
-                    }
-                    if (comboBox1.Text.Length != 0)
-                    {
-                        con.Open();
-                        SqlCommand command = new SqlCommand("update tbl_expenses set " + "expenseType = '" + comboBox1.Text + "' where id = '" + int.Parse(txtID.Text) + "' and username = '" + user + "'", con);
-                        command.ExecuteNonQuery();
-                        con.Close();
-                    }
-                    if (dateTimePicker1.Text.Length != 0)
-                    {
-                        con.Open();
-                        SqlCommand command = new SqlCommand("update tbl_expenses set " + "date = '" + DateTime.Parse(dateTimePicker1.Text) + "' where id = '" + int.Parse(txtID.Text) + "' and username = '" + user + "'", con);
-                        command.ExecuteNonQuery();
-                        con.Close();
-                    }
-                    MessageBox.Show("Successfully Updated.");
-                    BindData();
-                    txtName.Text = "";
-                    txtAmount.Text = "";
-                    comboBox1.SelectedItem = null;
-                    dateTimePicker1.Value = DateTime.Now;
-                    txtID.Text = "";
-                    txtName.Focus();
+                    MessageBox.Show("Amount section must be a number");
                 }
                 else
                 {
-                    MessageBox.Show("Enter a valid ID");
-                    txtID.Text = "";
-                    txtID.Focus();
+                    SqlCommand command2 = new SqlCommand("SELECT count(name) from tbl_expenses where id = '" + int.Parse(txtID.Text) + "' and username = '" + user + "'", con);
+                    SqlDataAdapter sd = new SqlDataAdapter(command2);
+                    DataTable dt = new DataTable();
+                    sd.SelectCommand.CommandType = CommandType.Text;
+                    sd.Fill(dt);
+                    int count = int.Parse(dt.Rows[0].ItemArray[0].ToString());
+                    if (count > 0)
+                    {
+                        if (txtName.Text.Length != 0)
+                        {
+                            con.Open();
+                            SqlCommand command = new SqlCommand("update tbl_expenses set " + "name = '" + txtName.Text + "' where id = '" + int.Parse(txtID.Text) + "' and username = '" + user + "'", con);
+                            command.ExecuteNonQuery();
+                            con.Close();
+                        }
+                        if (txtAmount.Text.Length != 0)
+                        {
+                            con.Open();
+                            SqlCommand command = new SqlCommand("update tbl_expenses set " + "amount = '" + int.Parse(txtAmount.Text) + "' where id = '" + int.Parse(txtID.Text) + "' and username = '" + user + "'", con);
+                            command.ExecuteNonQuery();
+                            con.Close();
+                        }
+                        if (comboBox1.Text.Length != 0)
+                        {
+                            con.Open();
+                            SqlCommand command = new SqlCommand("update tbl_expenses set " + "expenseType = '" + comboBox1.Text + "' where id = '" + int.Parse(txtID.Text) + "' and username = '" + user + "'", con);
+                            command.ExecuteNonQuery();
+                            con.Close();
+                        }
+                        if (dateTimePicker1.Text.Length != 0)
+                        {
+                            con.Open();
+                            SqlCommand command = new SqlCommand("update tbl_expenses set " + "date = '" + DateTime.Parse(dateTimePicker1.Text) + "' where id = '" + int.Parse(txtID.Text) + "' and username = '" + user + "'", con);
+                            command.ExecuteNonQuery();
+                            con.Close();
+                        }
+                        MessageBox.Show("Successfully Updated.");
+                        BindData();
+                        txtName.Text = "";
+                        txtAmount.Text = "";
+                        comboBox1.SelectedItem = null;
+                        dateTimePicker1.Value = DateTime.Now;
+                        txtID.Text = "";
+                        txtName.Focus();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Enter a valid ID");
+                        txtID.Text = "";
+                        txtID.Focus();
+                    }
                 }
             }
         }
