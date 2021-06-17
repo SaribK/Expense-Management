@@ -30,7 +30,7 @@ namespace Expense_Management
         void BindData()
         {
             // TODO learn how to make data fitted into datagridview
-            SqlCommand command = new SqlCommand("select name as 'Name', expenseType as 'Expense Type', amount as 'Amount', date as 'Date' from tbl_expenses where username = '"+user+"'", con);
+            SqlCommand command = new SqlCommand("select id as 'ID', name as 'Name', expenseType as 'Expense Type', amount as 'Amount', date as 'Date' from tbl_expenses where username = '"+user+"'", con);
             SqlDataAdapter sd = new SqlDataAdapter(command);
             DataTable dt = new DataTable();
             sd.Fill(dt);
@@ -48,7 +48,7 @@ namespace Expense_Management
             //check that no text boxes are left empty
             if (txtName.TextLength == 0 || txtAmount.TextLength == 0 || comboBox1.Text.Length == 0)
             {
-                MessageBox.Show("Fill out all parts of the form");
+                MessageBox.Show("Fill out all required parts of the form");
             }
             else
             {
@@ -72,6 +72,26 @@ namespace Expense_Management
         private void frmInsert_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //TODO if the given ID is invalid (e.g user does not own that id or its not a number), clear textbox, focus that textbox, display message
+            //TODO update each column depending on if it has input or not (i.e if name is filled, update name). Remove if statement that checks if everything is empty if doing this
+
+            if (txtName.TextLength == 0 || txtAmount.TextLength == 0 || comboBox1.Text.Length == 0 || txtID.Text.Length == 0)
+            {
+                MessageBox.Show("Fill out all parts of the form");
+            }
+            else
+            {
+                con.Open();
+                SqlCommand command = new SqlCommand("update tbl_expenses set " + "name = '" + txtName.Text + "', amount ='" + int.Parse(txtAmount.Text) + "', expenseType = '" + comboBox1.Text + "', date = '" + DateTime.Parse(dateTimePicker1.Text) + "' where id = '" + int.Parse(txtID.Text) + "' and username = '"+ user +"'", con);
+                command.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Successfully Updated.");
+                BindData();
+            }
         }
     }
 }
