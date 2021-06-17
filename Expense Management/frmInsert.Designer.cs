@@ -85,7 +85,7 @@ namespace Expense_Management
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(213, 118);
+            this.txtName.Location = new System.Drawing.Point(223, 121);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(249, 27);
             this.txtName.TabIndex = 2;
@@ -140,7 +140,7 @@ namespace Expense_Management
             "Fixed Expense",
             "Irregular Expense",
             "Variable Costs"});
-            this.comboBox1.Location = new System.Drawing.Point(213, 185);
+            this.comboBox1.Location = new System.Drawing.Point(223, 188);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(249, 26);
             this.comboBox1.TabIndex = 9;
@@ -164,6 +164,7 @@ namespace Expense_Management
             this.button3.TabIndex = 13;
             this.button3.Text = "Delete";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -199,12 +200,12 @@ namespace Expense_Management
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(249, 27);
             this.dateTimePicker1.TabIndex = 14;
-            this.dateTimePicker1.Value = new System.DateTime(2021, 6, 16, 0, 0, 0, 0);
+            this.dateTimePicker1.Value = new System.DateTime(2021, 6, 17, 0, 0, 0, 0);
             // 
             // txtID
             // 
             this.txtID.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(213, 245);
+            this.txtID.Location = new System.Drawing.Point(223, 248);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(249, 27);
             this.txtID.TabIndex = 16;
@@ -227,9 +228,9 @@ namespace Expense_Management
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(78, 253);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(124, 16);
+            this.label7.Size = new System.Drawing.Size(143, 16);
             this.label7.TabIndex = 15;
-            this.label7.Text = "(Only for Update)";
+            this.label7.Text = "(Update and Delete)";
             // 
             // frmInsert
             // 
