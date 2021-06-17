@@ -82,12 +82,12 @@ namespace Expense_Management
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //TODO if the given ID is invalid (e.g user does not own that id or its not a number), clear textbox, focus that textbox, display message
             //TODO update each column depending on if it has input or not (i.e if name is filled, update name). Remove if statement that checks if everything is empty if doing this
             if (!int.TryParse(txtID.Text, out _))
             {
                 MessageBox.Show("ID has to be a number");
                 txtID.Text = "";
+                txtID.Focus();
             }
             else if (txtName.TextLength == 0 || txtAmount.TextLength == 0 || comboBox1.Text.Length == 0 || txtID.Text.Length == 0)
             {
@@ -120,6 +120,7 @@ namespace Expense_Management
                 {
                     MessageBox.Show("Enter a valid ID");
                     txtID.Text = "";
+                    txtID.Focus();
                 }
             }
         }
@@ -155,11 +156,15 @@ namespace Expense_Management
                 else
                 {
                     MessageBox.Show("This ID does not exist");
+                    txtID.Text = "";
+                    txtID.Focus();
                 }
             }
             else
             {
                 MessageBox.Show("Enter a number for the ID");
+                txtID.Text = "";
+                txtID.Focus();
             }
         }
     }
