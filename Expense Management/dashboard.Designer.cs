@@ -42,6 +42,7 @@ namespace Expense_Management
             this.lblFixedExp = new System.Windows.Forms.Label();
             this.lblIrregularExp = new System.Windows.Forms.Label();
             this.lblVariableCosts = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -69,6 +70,7 @@ namespace Expense_Management
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panel2.Controls.Add(this.button6);
             this.panel2.Controls.Add(this.button5);
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button3);
@@ -209,6 +211,21 @@ namespace Expense_Management
             this.lblVariableCosts.Text = "Variable Costs:";
             this.lblVariableCosts.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // button6
+            // 
+            this.button6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Verdana", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(0, 370);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(177, 68);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "Log Out";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -248,5 +265,6 @@ namespace Expense_Management
         private System.Windows.Forms.Label lblFixedExp;
         private System.Windows.Forms.Label lblIrregularExp;
         private System.Windows.Forms.Label lblVariableCosts;
+        private System.Windows.Forms.Button button6;
     }
 }

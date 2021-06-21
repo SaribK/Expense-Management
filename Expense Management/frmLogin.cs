@@ -29,10 +29,7 @@ namespace Expense_Management
             cmd = new SqlCommand(login, con);
             SqlDataReader dr = cmd.ExecuteReader();
 
-
             string current_user = txtUsername.Text;
-
-            
 
             if (dr.Read() == true)
             {
@@ -88,6 +85,11 @@ namespace Expense_Management
             {
                 button1_Click(this, new EventArgs());
             }
+        }
+
+        private void frmLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

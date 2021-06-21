@@ -120,5 +120,12 @@ namespace Expense_Management
                 lblVariableCosts.Text = "Variable Costs: $" + value4;
             }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            new frmLogin().Show();
+            this.Hide();
+            MessageBox.Show("Successfully Logged Out");
+        }
     }
 }

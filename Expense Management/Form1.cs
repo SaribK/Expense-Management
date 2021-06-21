@@ -103,5 +103,10 @@ namespace Expense_Management
                 button1_Click(this, new EventArgs());
             }
         }
+
+        private void frmRegister_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

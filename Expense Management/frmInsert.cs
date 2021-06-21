@@ -40,13 +40,22 @@ namespace Expense_Management
         private void frmInsert_Load(object sender, EventArgs e)
         {
             BindData();
+            clearDate();
+        }
+
+        void clearDate()
+        {
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = " ";
+            dateTimePicker1.ShowCheckBox = true;
+            dateTimePicker1.Checked = false;
         }
 
         //insert into database
         private void button1_Click(object sender, EventArgs e)
         {
             //check that no text boxes are left empty
-            if (txtName.TextLength == 0 || txtAmount.TextLength == 0 || comboBox1.Text.Length == 0)
+            if (txtName.TextLength == 0 || txtAmount.TextLength == 0 || comboBox1.Text.Length == 0 || dateTimePicker1.Text.Length == 1)
             {
                 MessageBox.Show("Fill out all required parts of the form");
                 txtName.Focus();
@@ -69,7 +78,7 @@ namespace Expense_Management
                     txtName.Text = "";
                     txtAmount.Text = "";
                     comboBox1.SelectedItem = null;
-                    dateTimePicker1.Value = DateTime.Now;
+                    clearDate();
                     txtName.Focus();
                 }
             }
@@ -82,7 +91,7 @@ namespace Expense_Management
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //TODO update each column depending on if it has input or not (i.e if name is filled, update name). Remove if statement that checks if everything is empty if doing this
+            //update each column depending on if it has input or not (i.e if name is filled, update name)
             if (!int.TryParse(txtID.Text, out _))
             {
                 MessageBox.Show("Enter a number for ID");
@@ -97,6 +106,7 @@ namespace Expense_Management
                 }
                 else
                 {
+                    bool changed = false;
                     SqlCommand command2 = new SqlCommand("SELECT count(name) from tbl_expenses where id = '" + int.Parse(txtID.Text) + "' and username = '" + user + "'", con);
                     SqlDataAdapter sd = new SqlDataAdapter(command2);
                     DataTable dt = new DataTable();
@@ -111,6 +121,7 @@ namespace Expense_Management
                             SqlCommand command = new SqlCommand("update tbl_expenses set " + "name = '" + txtName.Text + "' where id = '" + int.Parse(txtID.Text) + "' and username = '" + user + "'", con);
                             command.ExecuteNonQuery();
                             con.Close();
+                            changed = true;
                         }
                         if (txtAmount.Text.Length != 0)
                         {
@@ -118,6 +129,7 @@ namespace Expense_Management
                             SqlCommand command = new SqlCommand("update tbl_expenses set " + "amount = '" + int.Parse(txtAmount.Text) + "' where id = '" + int.Parse(txtID.Text) + "' and username = '" + user + "'", con);
                             command.ExecuteNonQuery();
                             con.Close();
+                            changed = true;
                         }
                         if (comboBox1.Text.Length != 0)
                         {
@@ -125,20 +137,25 @@ namespace Expense_Management
                             SqlCommand command = new SqlCommand("update tbl_expenses set " + "expenseType = '" + comboBox1.Text + "' where id = '" + int.Parse(txtID.Text) + "' and username = '" + user + "'", con);
                             command.ExecuteNonQuery();
                             con.Close();
+                            changed = true;
                         }
-                        if (dateTimePicker1.Text.Length != 0)
+                        if (dateTimePicker1.Text.Length != 1)
                         {
                             con.Open();
                             SqlCommand command = new SqlCommand("update tbl_expenses set " + "date = '" + DateTime.Parse(dateTimePicker1.Text) + "' where id = '" + int.Parse(txtID.Text) + "' and username = '" + user + "'", con);
                             command.ExecuteNonQuery();
                             con.Close();
+                            changed = true;
                         }
-                        MessageBox.Show("Successfully Updated.");
+                        if (changed)
+                            MessageBox.Show("Successfully Updated.");
+                        else
+                            MessageBox.Show("Nothing was changed");
                         BindData();
                         txtName.Text = "";
                         txtAmount.Text = "";
                         comboBox1.SelectedItem = null;
-                        dateTimePicker1.Value = DateTime.Now;
+                        clearDate();
                         txtID.Text = "";
                         txtName.Focus();
                     }
@@ -154,6 +171,7 @@ namespace Expense_Management
 
         private void button3_Click(object sender, EventArgs e)
         {
+            //TODO delete everything that matches a certain category (i.e delete everything that has a name 'Bank' or delete all Fixed expenses in 2021)
             if (txtID.Text != "" && int.TryParse(txtID.Text, out _))
             {
                 SqlCommand command2 = new SqlCommand("SELECT count(name) from tbl_expenses where id = '" + int.Parse(txtID.Text) + "' and username = '"+user+"'", con);
@@ -175,7 +193,7 @@ namespace Expense_Management
                         txtName.Text = "";
                         txtAmount.Text = "";
                         comboBox1.SelectedItem = null;
-                        dateTimePicker1.Value = DateTime.Now;
+                        clearDate();
                         txtID.Text = "";
                         txtName.Focus();
                     }
@@ -192,6 +210,26 @@ namespace Expense_Management
                 MessageBox.Show("Enter a number for the ID");
                 txtID.Text = "";
                 txtID.Focus();
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            new dashboard(user).Show();
+            this.Hide();
+        }
+
+        private void dateTimePicker1_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (!dateTimePicker1.Checked)
+            {
+                dateTimePicker1.Format = DateTimePickerFormat.Custom;
+                dateTimePicker1.CustomFormat = " ";
+            }
+            else
+            {
+                dateTimePicker1.Format = DateTimePickerFormat.Custom;
+                dateTimePicker1.CustomFormat = "MM-dd-yyyy";
             }
         }
     }
