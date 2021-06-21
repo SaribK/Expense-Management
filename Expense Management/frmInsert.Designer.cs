@@ -139,7 +139,7 @@ namespace Expense_Management
             this.comboBox1.Items.AddRange(new object[] {
             "Fixed Expense",
             "Irregular Expense",
-            "Variable Costs"});
+            "Variable Cost"});
             this.comboBox1.Location = new System.Drawing.Point(223, 188);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(249, 26);
