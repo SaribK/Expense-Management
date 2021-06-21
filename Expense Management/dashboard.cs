@@ -51,11 +51,13 @@ namespace Expense_Management
         private void dashboard_Load(object sender, EventArgs e)
         {
             DateTime time = DateTime.Now;
+            int monthNum = time.Month;
+            int yearNum = time.Year;
             string month = time.ToString("MMMM");
             label2.Text = "Statistics for the month of " + month;
 
             //total expenses
-            SqlCommand command = new SqlCommand("SELECT SUM(amount) from tbl_expenses where username = '"+user+"'", con);
+            SqlCommand command = new SqlCommand("SELECT SUM(amount) from tbl_expenses where username = '"+user+"' and MONTH(date) = "+monthNum+" and YEAR(date) = "+yearNum, con);
             SqlDataAdapter sd = new SqlDataAdapter(command);
             DataTable dt = new DataTable();
             sd.SelectCommand.CommandType = CommandType.Text;
@@ -71,7 +73,7 @@ namespace Expense_Management
             }
 
             //fixed expenses
-            SqlCommand command2 = new SqlCommand("SELECT SUM(amount) from tbl_expenses where username = '" + user + "' and expenseType = 'Fixed Expense'", con);
+            SqlCommand command2 = new SqlCommand("SELECT SUM(amount) from tbl_expenses where username = '" + user + "' and expenseType = 'Fixed Expense' and MONTH(date) = " + monthNum + " and YEAR(date) = " + yearNum, con);
             SqlDataAdapter sd2 = new SqlDataAdapter(command2);
             DataTable dt2 = new DataTable();
             sd2.SelectCommand.CommandType = CommandType.Text;
@@ -87,7 +89,7 @@ namespace Expense_Management
             }
 
             //irregular expenses
-            SqlCommand command3 = new SqlCommand("SELECT SUM(amount) from tbl_expenses where username = '" + user + "' and expenseType = 'Irregular Expense'", con);
+            SqlCommand command3 = new SqlCommand("SELECT SUM(amount) from tbl_expenses where username = '" + user + "' and expenseType = 'Irregular Expense' and MONTH(date) = " + monthNum + " and YEAR(date) = " + yearNum, con);
             SqlDataAdapter sd3 = new SqlDataAdapter(command3);
             DataTable dt3 = new DataTable();
             sd3.SelectCommand.CommandType = CommandType.Text;
@@ -103,7 +105,7 @@ namespace Expense_Management
             }
 
             //variable costs
-            SqlCommand command4 = new SqlCommand("SELECT SUM(amount) from tbl_expenses where username = '" + user + "' and expenseType = 'Variable Cost'", con);
+            SqlCommand command4 = new SqlCommand("SELECT SUM(amount) from tbl_expenses where username = '" + user + "' and expenseType = 'Variable Cost' and MONTH(date) = " + monthNum + " and YEAR(date) = " + yearNum, con);
             SqlDataAdapter sd4 = new SqlDataAdapter(command4);
             DataTable dt4 = new DataTable();
             sd4.SelectCommand.CommandType = CommandType.Text;
