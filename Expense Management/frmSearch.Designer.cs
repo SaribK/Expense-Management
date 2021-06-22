@@ -130,6 +130,7 @@ namespace Expense_Management
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(249, 27);
             this.txtAmount.TabIndex = 22;
+            this.txtAmount.TextChanged += new System.EventHandler(this.txtAmount_TextChanged);
             // 
             // label3
             // 

@@ -57,11 +57,7 @@ namespace Expense_Management
 
         private void txtName_TextChanged(object sender, EventArgs e)
         {
-            SqlCommand command = new SqlCommand("select id as 'ID', name as 'Name', expenseType as 'Expense Type', amount as 'Amount', date as 'Date' from tbl_expenses where username = '" + user + "' and name LIKE '%" + txtName.Text + "%'", con);
-            SqlDataAdapter sd = new SqlDataAdapter(command);
-            DataTable dt = new DataTable();
-            sd.Fill(dt);
-            dataGridView1.DataSource = dt;
+            search();
         }
 
         private void dateTimePicker1_MouseUp(object sender, MouseEventArgs e)
@@ -76,6 +72,20 @@ namespace Expense_Management
                 dateTimePicker1.Format = DateTimePickerFormat.Custom;
                 dateTimePicker1.CustomFormat = "MMMM dd, yyyy";
             }
+        }
+
+        void search()
+        {
+            SqlCommand command = new SqlCommand("select id as 'ID', name as 'Name', expenseType as 'Expense Type', amount as 'Amount', date as 'Date' from tbl_expenses where username = '" + user + "' and name LIKE '%" + txtName.Text + "%' and amount LIKE '%" + txtAmount.Text + "%'", con);
+            SqlDataAdapter sd = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            sd.Fill(dt);
+            dataGridView1.DataSource = dt;
+        }
+
+        private void txtAmount_TextChanged(object sender, EventArgs e)
+        {
+            search();
         }
     }
 }
