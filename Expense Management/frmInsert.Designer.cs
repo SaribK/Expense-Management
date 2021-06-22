@@ -30,6 +30,7 @@ namespace Expense_Management
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -46,7 +47,6 @@ namespace Expense_Management
             this.txtID = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +60,19 @@ namespace Expense_Management
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(904, 88);
             this.panel1.TabIndex = 0;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Purple;
+            this.button4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(12, 29);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(134, 39);
+            this.button4.TabIndex = 1;
+            this.button4.Text = "Home";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label1
             // 
@@ -235,19 +248,6 @@ namespace Expense_Management
             this.label7.Size = new System.Drawing.Size(143, 16);
             this.label7.TabIndex = 15;
             this.label7.Text = "(Update and Delete)";
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Purple;
-            this.button4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(12, 29);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(134, 39);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Home";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // frmInsert
             // 

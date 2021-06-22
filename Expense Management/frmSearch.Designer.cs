@@ -58,6 +58,7 @@ namespace Expense_Management
             this.button4.TabIndex = 1;
             this.button4.Text = "Home";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // txtID
             // 
@@ -66,6 +67,7 @@ namespace Expense_Management
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(249, 27);
             this.txtID.TabIndex = 32;
+            this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             // 
             // label6
             // 
@@ -87,6 +89,7 @@ namespace Expense_Management
             this.dateTimePicker1.Size = new System.Drawing.Size(249, 27);
             this.dateTimePicker1.TabIndex = 29;
             this.dateTimePicker1.Value = new System.DateTime(2021, 6, 17, 0, 0, 0, 0);
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             this.dateTimePicker1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dateTimePicker1_MouseUp);
             // 
             // dataGridView1
@@ -104,6 +107,7 @@ namespace Expense_Management
             this.comboBox1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
+            "",
             "Fixed Expense",
             "Irregular Expense",
             "Variable Cost"});
@@ -111,6 +115,7 @@ namespace Expense_Management
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(249, 26);
             this.comboBox1.TabIndex = 24;
+            this.comboBox1.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
             // 
             // label4
             // 
@@ -172,7 +177,7 @@ namespace Expense_Management
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(863, 88);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Manage Entries";
+            this.label1.Text = "Search Database";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
