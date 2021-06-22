@@ -87,6 +87,7 @@ namespace Expense_Management
             this.dateTimePicker1.Size = new System.Drawing.Size(249, 27);
             this.dateTimePicker1.TabIndex = 29;
             this.dateTimePicker1.Value = new System.DateTime(2021, 6, 17, 0, 0, 0, 0);
+            this.dateTimePicker1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dateTimePicker1_MouseUp);
             // 
             // dataGridView1
             // 
@@ -148,6 +149,7 @@ namespace Expense_Management
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(249, 27);
             this.txtName.TabIndex = 19;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // label2
             // 
@@ -214,6 +216,7 @@ namespace Expense_Management
             this.Name = "frmSearch";
             this.Text = "frmSearch";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmSearch_FormClosed);
+            this.Load += new System.EventHandler(this.frmSearch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

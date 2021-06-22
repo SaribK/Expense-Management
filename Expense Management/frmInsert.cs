@@ -29,7 +29,6 @@ namespace Expense_Management
 
         void BindData()
         {
-            // TODO learn how to make data fitted into datagridview
             SqlCommand command = new SqlCommand("select id as 'ID', name as 'Name', expenseType as 'Expense Type', amount as 'Amount', date as 'Date' from tbl_expenses where username = '"+user+"'", con);
             SqlDataAdapter sd = new SqlDataAdapter(command);
             DataTable dt = new DataTable();
@@ -229,7 +228,7 @@ namespace Expense_Management
             else
             {
                 dateTimePicker1.Format = DateTimePickerFormat.Custom;
-                dateTimePicker1.CustomFormat = "MM-dd-yyyy";
+                dateTimePicker1.CustomFormat = "MMMM dd, yyyy";
             }
         }
     }

@@ -37,7 +37,7 @@ namespace Expense_Management
 
         private void button2_Click(object sender, EventArgs e)
         {
-            new frmSearch().Show();
+            new frmSearch(user).Show();
             this.Hide();
         }
 
