@@ -66,7 +66,7 @@ namespace Expense_Management
             this.button4.BackColor = System.Drawing.Color.Purple;
             this.button4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(12, 29);
+            this.button4.Location = new System.Drawing.Point(23, 24);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(134, 39);
             this.button4.TabIndex = 1;

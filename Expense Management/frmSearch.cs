@@ -51,13 +51,13 @@ namespace Expense_Management
 
         private void frmSearch_Load(object sender, EventArgs e)
         {
-            BindData();
+            //BindData();
             clearDate();
         }
 
         private void txtName_TextChanged(object sender, EventArgs e)
         {
-            search();
+            //search();
         }
 
         private void dateTimePicker1_MouseUp(object sender, MouseEventArgs e)
@@ -66,13 +66,13 @@ namespace Expense_Management
             {
                 dateTimePicker1.Format = DateTimePickerFormat.Custom;
                 dateTimePicker1.CustomFormat = " ";
-                search();
+                //search();
             }
             else
             {
                 dateTimePicker1.Format = DateTimePickerFormat.Custom;
                 dateTimePicker1.CustomFormat = "MMMM dd, yyyy";
-                search();
+                //search();
             }
         }
 
@@ -96,28 +96,33 @@ namespace Expense_Management
 
         private void txtAmount_TextChanged(object sender, EventArgs e)
         {
-            search();
+            //search();
         }
 
         private void comboBox1_TextChanged(object sender, EventArgs e)
         {
-            search();
+            //search();
         }
 
         private void txtID_TextChanged(object sender, EventArgs e)
         {
-            search();
+            //search();
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            search();
+            //search();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             new dashboard(user).Show();
             this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            search();
         }
     }
 }
