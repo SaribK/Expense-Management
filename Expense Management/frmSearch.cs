@@ -128,42 +128,34 @@ namespace Expense_Management
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.Rows.Count > 0)
+            Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
+            Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+            worksheet = workbook.Sheets["Sheet1"];
+            worksheet = workbook.ActiveSheet;
+            worksheet.Name = "CustomerDetail";
+
+            for (int i = 1; i < dataGridView1.Columns.Count + 1; i++)
             {
-                Microsoft.Office.Interop.Excel.Application excl = new Microsoft.Office.Interop.Excel.Application();
-                excl.Application.Workbooks.Add(Type.Missing);
-                for (int i = 1; i < dataGridView1.Columns.Count; i++)
-                {
-                    excl.Cells[1, i] = dataGridView1.Columns[i - 1].HeaderText;
-                }
-                for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                {
-                    for (int j = 0; j < dataGridView1.Columns.Count; j++)
-                    {
-                        excl.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString();
-                    }
-                }
-                excl.Columns.AutoFit();
-                excl.Visible = true;
+                worksheet.Cells[i, 1] = dataGridView1.Columns[i - 1].HeaderText;
             }
-            /*using(SaveFileDialog sfd = new SaveFileDialog() { Filter="Excel Workbook|*.xlsx" })
+
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
-                if (sfd.ShowDialog() == DialogResult.OK)
+                for (int j = 0; j < dataGridView1.Columns.Count; j++)
                 {
-                    try
-                    {
-                        using(XLWorkbook workbook = new XLWorkbook())
-                        {
-                            workbook.Worksheets.Add(this.dataGridView1.Columns.Cop)
-                        }
-                    }
-                    catch(Exception ex)
-                    {
-                        MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    worksheet.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString();
                 }
             }
-            */
+
+            var saveFileDialogue = new SaveFileDialog();
+            saveFileDialogue.FileName = "output";
+            saveFileDialogue.DefaultExt = ".xlsx";
+            if (saveFileDialogue.ShowDialog() == DialogResult.OK)
+            {
+                workbook.SaveAs(saveFileDialogue.FileName, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+            }
+            app.Quit();
         }
     }
 }
