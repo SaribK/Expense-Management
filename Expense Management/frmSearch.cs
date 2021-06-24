@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClosedXML.Excel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -123,6 +124,46 @@ namespace Expense_Management
         private void button1_Click(object sender, EventArgs e)
         {
             search();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count > 0)
+            {
+                Microsoft.Office.Interop.Excel.Application excl = new Microsoft.Office.Interop.Excel.Application();
+                excl.Application.Workbooks.Add(Type.Missing);
+                for (int i = 1; i < dataGridView1.Columns.Count; i++)
+                {
+                    excl.Cells[1, i] = dataGridView1.Columns[i - 1].HeaderText;
+                }
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dataGridView1.Columns.Count; j++)
+                    {
+                        excl.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                    }
+                }
+                excl.Columns.AutoFit();
+                excl.Visible = true;
+            }
+            /*using(SaveFileDialog sfd = new SaveFileDialog() { Filter="Excel Workbook|*.xlsx" })
+            {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        using(XLWorkbook workbook = new XLWorkbook())
+                        {
+                            workbook.Worksheets.Add(this.dataGridView1.Columns.Cop)
+                        }
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            */
         }
     }
 }
