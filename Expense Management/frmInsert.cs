@@ -231,5 +231,25 @@ namespace Expense_Management
                 dateTimePicker1.CustomFormat = "MMMM dd, yyyy";
             }
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //clicking cell displays all info in each textbox
+
+            
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+
+                txtName.Text = row.Cells["Name"].Value.ToString();
+                txtAmount.Text = row.Cells["Amount"].Value.ToString();
+                txtID.Text = row.Cells["Id"].Value.ToString();
+                comboBox1.Text = row.Cells["Expense Type"].Value.ToString();
+                dateTimePicker1.Format = DateTimePickerFormat.Custom;
+                dateTimePicker1.CustomFormat = "MMMM dd, yyyy";
+                dateTimePicker1.Text = row.Cells["Date"].Value.ToString();
+            }
+            
+        }
     }
 }
