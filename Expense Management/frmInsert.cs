@@ -251,5 +251,23 @@ namespace Expense_Management
             }
             
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            SqlCommand command;
+            if (dateTimePicker1.Text.Length != 1)
+            {
+                // search date as well
+                command = new SqlCommand("select id as 'ID', name as 'Name', expenseType as 'Expense Type', amount as 'Amount', date as 'Date' from tbl_expenses where username = '" + user + "' and name LIKE '%" + txtName.Text + "%' and amount LIKE '%" + txtAmount.Text + "%' and expenseType LIKE '%" + comboBox1.Text + "%' and id LIKE '%" + txtID.Text + "%' and date = '" + dateTimePicker1.Value.ToString("yyyy/MM/dd") + "'", con);
+            }
+            else
+            {
+                command = new SqlCommand("select id as 'ID', name as 'Name', expenseType as 'Expense Type', amount as 'Amount', date as 'Date' from tbl_expenses where username = '" + user + "' and name LIKE '%" + txtName.Text + "%' and amount LIKE '%" + txtAmount.Text + "%' and expenseType LIKE '%" + comboBox1.Text + "%' and id LIKE '%" + txtID.Text + "%'", con);
+            }
+            SqlDataAdapter sd = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            sd.Fill(dt);
+            dataGridView1.DataSource = dt;
+        }
     }
 }

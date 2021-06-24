@@ -47,6 +47,7 @@ namespace Expense_Management
             this.txtID = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -132,7 +133,7 @@ namespace Expense_Management
             this.txtAmount.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAmount.Location = new System.Drawing.Point(603, 124);
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(249, 27);
+            this.txtAmount.Size = new System.Drawing.Size(261, 27);
             this.txtAmount.TabIndex = 6;
             // 
             // label5
@@ -167,7 +168,7 @@ namespace Expense_Management
             this.dataGridView1.Location = new System.Drawing.Point(51, 289);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 349);
+            this.dataGridView1.Size = new System.Drawing.Size(813, 349);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -177,9 +178,9 @@ namespace Expense_Management
             this.button3.BackColor = System.Drawing.Color.Purple;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(739, 245);
+            this.button3.Location = new System.Drawing.Point(684, 242);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(113, 38);
+            this.button3.Size = new System.Drawing.Size(87, 38);
             this.button3.TabIndex = 13;
             this.button3.Text = "Delete";
             this.button3.UseVisualStyleBackColor = false;
@@ -190,9 +191,9 @@ namespace Expense_Management
             this.button2.BackColor = System.Drawing.Color.Purple;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(617, 245);
+            this.button2.Location = new System.Drawing.Point(591, 242);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(113, 38);
+            this.button2.Size = new System.Drawing.Size(87, 38);
             this.button2.TabIndex = 12;
             this.button2.Text = "Update";
             this.button2.UseVisualStyleBackColor = false;
@@ -203,9 +204,9 @@ namespace Expense_Management
             this.button1.BackColor = System.Drawing.Color.Purple;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(498, 245);
+            this.button1.Location = new System.Drawing.Point(498, 242);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 38);
+            this.button1.Size = new System.Drawing.Size(87, 38);
             this.button1.TabIndex = 11;
             this.button1.Text = "Insert";
             this.button1.UseVisualStyleBackColor = false;
@@ -217,7 +218,7 @@ namespace Expense_Management
             this.dateTimePicker1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Location = new System.Drawing.Point(603, 185);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(249, 27);
+            this.dateTimePicker1.Size = new System.Drawing.Size(261, 27);
             this.dateTimePicker1.TabIndex = 14;
             this.dateTimePicker1.Value = new System.DateTime(2021, 6, 17, 0, 0, 0, 0);
             this.dateTimePicker1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dateTimePicker1_MouseUp);
@@ -252,12 +253,26 @@ namespace Expense_Management
             this.label7.TabIndex = 15;
             this.label7.Text = "(Update and Delete)";
             // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Purple;
+            this.button5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(777, 241);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(87, 39);
+            this.button5.TabIndex = 17;
+            this.button5.Text = "Search";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // frmInsert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(904, 650);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -306,5 +321,6 @@ namespace Expense_Management
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
