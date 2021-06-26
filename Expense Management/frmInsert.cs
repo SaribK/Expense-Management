@@ -235,8 +235,6 @@ namespace Expense_Management
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //clicking cell displays all info in each textbox
-
-            
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
